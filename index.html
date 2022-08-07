@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>English Alla</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="app">
+      <p id="p0">He
+        <select name="first" id="id0">
+          <option value="is">is</option>
+          <option value="are">are</option>
+        </select>
+        very beautiful
+      </p>
+      <p id="p1">They 
+        <select name="first" id="id1">
+          <option value="is">is</option>
+          <option value="are">are</option>
+        </select>
+        very happy
+      </p>
+      <p id="p2">She
+        <select name="first" id="id2">
+          <option value="is">is</option>
+          <option value="are">are</option>
+        </select>
+        so smart
+      </p>
+      <p id="p3">It
+        <select name="first" id="id3">
+          <option value="is">is</option>
+          <option value="are">are</option>
+        </select>
+        not easy
+      </p>
+      <p id="p4">We
+        <select name="first" id="id4">
+          <option value="is">is</option>
+          <option value="are">are</option>
+        </select>
+        not very close friends.
+      </p>
+      <button @click="isCorrect">Check</button>
+    </div>
+  </div>
+  
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    const {
+      createApp
+    } = Vue
+
+    createApp({
+      data() {
+        return {
+          message: 'Привіт, Alla',
+          answersKeys: [],
+          correctanswersKeys: ['is', 'are', 'is', 'is', 'are'],
+        }
+      },
+
+      methods: {
+        isCorrect() {
+            this.answersKeys = [];
+            for(let i = 0; i < 5; i++) {
+              let indexArr = 'id' + i;
+              let select = document.getElementById(indexArr);
+              let value = select.options[select.selectedIndex].value;
+              this.answersKeys.push(value)
+            }
+
+            for(let i = 0; i < 5; i++) {
+              if(this.answersKeys[i] === this.correctanswersKeys[i]){
+                let pId = "p" + i;
+                document.getElementById(pId).style.color = "green";
+              } else {
+                let pId = "p" + i;
+                document.getElementById(pId).style.color = "red";
+              }
+            }
+          
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

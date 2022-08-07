@@ -1,0 +1,22 @@
+body {
+  font-size: 24px;
+  background-color:rgb(229, 229, 227);
+  color: rgb(20, 20, 20)
+}
+
+select {
+  font-size: 20px;
+  color: inherit;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+}
