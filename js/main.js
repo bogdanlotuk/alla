@@ -7,7 +7,13 @@ createApp({
     return {
       message: 'Привіт, Alla',
       answersKeys: [],
-      correctanswersKeys: ['is', 'are', 'is', 'is', 'are'],
+      correctanswersKeys: [
+        '2', 
+        '2', 
+        '2', 
+        '1', 
+        '1'
+      ],
     }
   },
 
