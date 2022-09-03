@@ -12,11 +12,13 @@ select {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 15px 15px;
 }
 
 button {
+  display: block;
   font-size: 18px;
   padding: 10px;
   border-radius: 5px;
+  margin: 0 auto;
 }
